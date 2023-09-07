@@ -5,11 +5,12 @@
   export let post: PageData;
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="post" on:click={() => goto(`/p/${post.id}`)}>
   <h2>{post.title}</h2>
-  <small
-    >{post.author?.name ? `By ${post.author.name}` : "Unknown author"}</small
-  >
+  <small>
+    {post.author?.name ? `By ${post.author.name}` : "Unknown author"}
+  </small>
   <p>{@html post.content}</p>
 </div>
 
